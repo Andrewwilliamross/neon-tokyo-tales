@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyberpunk Tokyo Vaporwave Design System - Light Mode */
+/* Cyberpunk Tokyo Vaporwave Design System - Neon Light Mode */
 
 @layer base {
   :root {
@@ -57,13 +57,14 @@
   body {
     @apply bg-background text-foreground font-inter;
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(255, 16, 240, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 25% 25%, rgba(255, 16, 240, 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 75% 75%, rgba(0, 212, 255, 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 50% 10%, rgba(185, 103, 219, 0.1) 0%, transparent 70%);
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-rajdhani font-semibold text-foreground;
+    @apply font-rajdhani font-semibold;
   }
 }
 
@@ -72,21 +73,66 @@
     box-shadow: 
       0 0 5px currentColor,
       0 0 10px currentColor,
-      0 0 15px currentColor,
-      0 0 20px currentColor;
+      0 0 20px currentColor,
+      0 0 40px currentColor,
+      0 0 80px rgba(255, 16, 240, 0.3);
+  }
+
+  .neon-glow-blue {
+    box-shadow: 
+      0 0 5px #00D4FF,
+      0 0 10px #00D4FF,
+      0 0 20px #00D4FF,
+      0 0 40px #00D4FF,
+      0 0 80px rgba(0, 212, 255, 0.4);
+  }
+
+  .neon-glow-teal {
+    box-shadow: 
+      0 0 5px #05FFA1,
+      0 0 10px #05FFA1,
+      0 0 20px #05FFA1,
+      0 0 40px #05FFA1,
+      0 0 80px rgba(5, 255, 161, 0.4);
+  }
+
+  .neon-glow-green {
+    box-shadow: 
+      0 0 5px #39FF14,
+      0 0 10px #39FF14,
+      0 0 20px #39FF14,
+      0 0 40px #39FF14,
+      0 0 80px rgba(57, 255, 20, 0.4);
   }
 
   .neon-border {
     border: 1px solid currentColor;
     box-shadow: 
-      0 0 5px currentColor,
-      inset 0 0 5px currentColor;
+      0 0 10px currentColor,
+      inset 0 0 10px rgba(255, 16, 240, 0.1);
   }
 
   .cyber-card {
-    @apply bg-card border border-neon-blue/20 rounded-lg p-6;
-    backdrop-filter: blur(10px);
-    background: rgba(245, 245, 245, 0.9);
+    background: rgba(255, 16, 240, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 
+      0 8px 32px rgba(0, 212, 255, 0.15),
+      0 0 20px rgba(255, 16, 240, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .cyber-card:hover {
+    background: rgba(255, 16, 240, 0.12);
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 
+      0 12px 40px rgba(0, 212, 255, 0.25),
+      0 0 30px rgba(255, 16, 240, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
   }
 
   .tokyo-shimmer {
@@ -104,59 +150,191 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(0, 0, 0, 0.05),
+      rgba(0, 212, 255, 0.3),
       transparent
     );
     animation: tokyo-shimmer 2s ease-in-out infinite;
   }
 
   .entry-card {
-    @apply cyber-card hover:border-neon-pink/30 transition-all duration-300 cursor-pointer;
-    transform: perspective(1000px) rotateX(0deg);
+    background: rgba(0, 212, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 16, 240, 0.25);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 
+      0 4px 20px rgba(255, 16, 240, 0.1),
+      0 0 15px rgba(0, 212, 255, 0.05);
   }
 
   .entry-card:hover {
-    transform: perspective(1000px) rotateX(5deg) translateY(-5px);
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(255, 16, 240, 0.4);
+    transform: perspective(1000px) rotateX(2deg) translateY(-4px);
     box-shadow: 
-      0 10px 25px rgba(255, 16, 240, 0.1),
-      0 0 15px rgba(0, 212, 255, 0.15);
+      0 12px 35px rgba(255, 16, 240, 0.2),
+      0 0 25px rgba(0, 212, 255, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .mission-card {
-    @apply cyber-card border-vaporwave-teal/30 hover:border-vaporwave-teal/50 transition-all duration-300;
-    background: linear-gradient(135deg, rgba(5, 255, 161, 0.05) 0%, rgba(1, 205, 254, 0.05) 100%);
+    background: rgba(5, 255, 161, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(5, 255, 161, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 
+      0 6px 25px rgba(5, 255, 161, 0.15),
+      0 0 20px rgba(1, 205, 254, 0.1);
+  }
+
+  .mission-card:hover {
+    background: rgba(5, 255, 161, 0.12);
+    border-color: rgba(5, 255, 161, 0.5);
+    box-shadow: 
+      0 10px 35px rgba(5, 255, 161, 0.25),
+      0 0 30px rgba(1, 205, 254, 0.2);
   }
 
   .xp-badge {
-    @apply bg-neon-green text-white px-3 py-1 rounded-full text-sm font-bold;
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+    background: linear-gradient(135deg, #39FF14, #05FFA1);
+    color: #000;
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: 
+      0 0 15px rgba(57, 255, 20, 0.6),
+      0 4px 15px rgba(57, 255, 20, 0.3);
+    border: 1px solid rgba(57, 255, 20, 0.8);
   }
 
   .level-progress {
-    @apply bg-gray-200 rounded-full h-3 overflow-hidden;
-    background: linear-gradient(90deg, rgba(255, 16, 240, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+    background: rgba(42, 42, 42, 0.3);
+    border-radius: 9999px;
+    height: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
   }
 
   .level-progress-fill {
-    @apply h-full bg-gradient-to-r from-neon-pink to-neon-blue transition-all duration-500;
-    box-shadow: 0 0 10px rgba(255, 16, 240, 0.4);
+    height: 100%;
+    background: linear-gradient(90deg, #FF10F0, #00D4FF);
+    transition: all 0.5s ease;
+    box-shadow: 
+      0 0 15px rgba(255, 16, 240, 0.6),
+      0 0 30px rgba(0, 212, 255, 0.4);
+    border-radius: 9999px;
+  }
+
+  .neon-text-pink {
+    color: #FF10F0;
+    text-shadow: 
+      0 0 5px #FF10F0,
+      0 0 10px #FF10F0,
+      0 0 15px #FF10F0;
+  }
+
+  .neon-text-blue {
+    color: #00D4FF;
+    text-shadow: 
+      0 0 5px #00D4FF,
+      0 0 10px #00D4FF,
+      0 0 15px #00D4FF;
+  }
+
+  .neon-text-teal {
+    color: #05FFA1;
+    text-shadow: 
+      0 0 5px #05FFA1,
+      0 0 10px #05FFA1,
+      0 0 15px #05FFA1;
+  }
+
+  .neon-button {
+    background: linear-gradient(135deg, #FF10F0, #00D4FF);
+    border: 1px solid rgba(255, 16, 240, 0.8);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 
+      0 0 20px rgba(255, 16, 240, 0.4),
+      0 4px 15px rgba(0, 212, 255, 0.3);
+  }
+
+  .neon-button:hover {
+    background: linear-gradient(135deg, #FF71CE, #01CDFE);
+    box-shadow: 
+      0 0 30px rgba(255, 16, 240, 0.6),
+      0 6px 25px rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .neon-badge-blue {
+    background: rgba(0, 212, 255, 0.15);
+    color: #00D4FF;
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  }
+
+  .neon-badge-teal {
+    background: rgba(5, 255, 161, 0.15);
+    color: #05FFA1;
+    border: 1px solid rgba(5, 255, 161, 0.4);
+    box-shadow: 0 0 10px rgba(5, 255, 161, 0.3);
+  }
+
+  .neon-badge-outline {
+    background: rgba(255, 255, 255, 0.05);
+    color: #666666;
+    border: 1px solid rgba(102, 102, 102, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  .stat-card {
+    background: rgba(255, 16, 240, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 16, 240, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 
+      0 4px 20px rgba(255, 16, 240, 0.1),
+      0 0 15px rgba(0, 212, 255, 0.05);
+  }
+
+  .stat-card:hover {
+    background: rgba(255, 16, 240, 0.1);
+    border-color: rgba(255, 16, 240, 0.3);
+    box-shadow: 
+      0 8px 30px rgba(255, 16, 240, 0.2),
+      0 0 25px rgba(0, 212, 255, 0.15);
+    transform: translateY(-2px);
   }
 }
 
-/* Scrollbar Styling */
+/* Enhanced Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(245, 245, 245, 0.5);
+  background: rgba(245, 245, 245, 0.2);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #FF10F0, #00D4FF);
-  border-radius: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #FF71CE, #01CDFE);
+  box-shadow: 0 0 15px rgba(255, 16, 240, 0.7);
 }
