@@ -4,12 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyberpunk Tokyo Vaporwave Design System - Grey Background Mode */
+/* Cyberpunk Tokyo Vaporwave Design System - Dark Grey Background Mode */
 
 @layer base {
   :root {
-    --background: 128 128 128;
-    --foreground: 42 42 42;
+    --background: 32 32 32;
+    --foreground: 245 245 245;
 
     --card: 245 245 245;
     --card-foreground: 42 42 42;
@@ -38,8 +38,8 @@
 
     --radius: 0.75rem;
 
-    --sidebar-background: 128 128 128;
-    --sidebar-foreground: 42 42 42;
+    --sidebar-background: 32 32 32;
+    --sidebar-foreground: 245 245 245;
     --sidebar-primary: 255 16 240;
     --sidebar-primary-foreground: 255 255 255;
     --sidebar-accent: 245 245 245;
