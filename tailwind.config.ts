@@ -62,9 +62,9 @@ export default {
 					orange: '#FF6B35',
 				},
 				cyber: {
-					dark: '#FFFFFF',
-					'dark-lighter': '#F5F5F5',
-					'dark-blue': '#E5E5E5',
+					dark: '#0A0A0F',
+					'dark-lighter': '#1A1A2E',
+					'dark-blue': '#16213E',
 					'electric': '#00F5FF',
 					'matrix': '#00FF41',
 				},
@@ -145,7 +145,7 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 			},
 			backgroundImage: {
-				'cyber-gradient': 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #E5E5E5 100%)',
+				'cyber-gradient': 'linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 50%, #16213E 100%)',
 				'neon-gradient': 'linear-gradient(135deg, #FF10F0 0%, #00D4FF 100%)',
 				'vaporwave-gradient': 'linear-gradient(135deg, #B967DB 0%, #FF71CE 50%, #01CDFE 100%)',
 			}

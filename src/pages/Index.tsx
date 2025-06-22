@@ -112,13 +112,13 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-full bg-vaporwave-gradient neon-glow flex items-center justify-center">
-                <span className="text-2xl font-rajdhani font-bold text-white">CY</span>
+                <span className="text-2xl font-rajdhani font-bold text-cyber-dark">CY</span>
               </div>
               <div>
                 <h1 className="text-2xl md:text-3xl font-rajdhani font-bold text-neon-pink">
                   Cyber Yamazaki
                 </h1>
-                <p className="text-muted-foreground">Tokyo Digital Nomad</p>
+                <p className="text-gray-400">Tokyo Digital Nomad</p>
                 <div className="flex items-center gap-2 mt-1">
                   <Badge className="bg-neon-blue/20 text-neon-blue border-neon-blue/30">
                     Level {userLevel}
@@ -135,10 +135,10 @@ const Index = () => {
               <div className="flex items-center gap-2 text-neon-blue">
                 <Clock className="w-5 h-5" />
                 <span className="font-rajdhani text-xl">{currentTime}</span>
-                <span className="text-sm text-muted-foreground">JST</span>
+                <span className="text-sm text-gray-400">JST</span>
               </div>
               <div className="text-right">
-                <div className="text-sm text-muted-foreground">XP Progress</div>
+                <div className="text-sm text-gray-400">XP Progress</div>
                 <div className="flex items-center gap-2">
                   <Progress value={progressPercentage} className="w-32 level-progress" />
                   <span className="text-sm font-medium">{currentXP}/{xpToNextLevel}</span>
@@ -172,10 +172,10 @@ const Index = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h3 className="font-rajdhani text-xl font-semibold text-foreground mb-2">
+                <h3 className="font-rajdhani text-xl font-semibold text-white mb-2">
                   {dailyPrompt.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-3">
+                <p className="text-gray-300 text-sm mb-3">
                   {dailyPrompt.description}
                 </p>
                 <div className="flex items-center justify-between">
@@ -201,18 +201,18 @@ const Index = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               {sideQuests.map((quest) => (
-                <div key={quest.id} className="p-3 rounded border border-border hover:border-neon-blue/30 transition-colors">
+                <div key={quest.id} className="p-3 rounded border border-gray-600 hover:border-neon-blue/50 transition-colors">
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="font-medium text-foreground">{quest.title}</h4>
+                    <h4 className="font-medium text-white">{quest.title}</h4>
                     <Badge className="xp-badge text-xs">+{quest.xpReward}</Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2">{quest.description}</p>
+                  <p className="text-sm text-gray-400 mb-2">{quest.description}</p>
                   <div className="flex items-center gap-2">
                     <Progress 
                       value={(quest.progress / quest.total) * 100} 
                       className="flex-1 h-2 level-progress" 
                     />
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-xs text-gray-400">
                       {quest.progress}/{quest.total}
                     </span>
                   </div>
@@ -241,15 +241,15 @@ const Index = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h4 className="font-rajdhani font-semibold text-foreground mb-1">{entry.title}</h4>
-                  <p className="text-sm text-muted-foreground flex items-center gap-1 mb-2">
+                  <h4 className="font-rajdhani font-semibold text-white mb-1">{entry.title}</h4>
+                  <p className="text-sm text-gray-400 flex items-center gap-1 mb-2">
                     <MapPin className="w-3 h-3" />
                     {entry.location}
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex flex-wrap gap-1">
                       {entry.tags.slice(0, 2).map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs border-border text-muted-foreground">
+                        <Badge key={tag} variant="outline" className="text-xs border-gray-600 text-gray-400">
                           {tag}
                         </Badge>
                       ))}
@@ -269,32 +269,32 @@ const Index = () => {
           <Card className="cyber-card text-center">
             <CardContent className="pt-6">
               <Award className="w-8 h-8 mx-auto mb-2 text-neon-pink" />
-              <div className="text-2xl font-rajdhani font-bold text-foreground">47</div>
-              <div className="text-sm text-muted-foreground">Total Entries</div>
+              <div className="text-2xl font-rajdhani font-bold text-white">47</div>
+              <div className="text-sm text-gray-400">Total Entries</div>
             </CardContent>
           </Card>
           
           <Card className="cyber-card text-center">
             <CardContent className="pt-6">
               <Camera className="w-8 h-8 mx-auto mb-2 text-vaporwave-teal" />
-              <div className="text-2xl font-rajdhani font-bold text-foreground">203</div>
-              <div className="text-sm text-muted-foreground">Photos</div>
+              <div className="text-2xl font-rajdhani font-bold text-white">203</div>
+              <div className="text-sm text-gray-400">Photos</div>
             </CardContent>
           </Card>
           
           <Card className="cyber-card text-center">
             <CardContent className="pt-6">
               <MapPin className="w-8 h-8 mx-auto mb-2 text-neon-blue" />
-              <div className="text-2xl font-rajdhani font-bold text-foreground">23</div>
-              <div className="text-sm text-muted-foreground">Locations</div>
+              <div className="text-2xl font-rajdhani font-bold text-white">23</div>
+              <div className="text-sm text-gray-400">Locations</div>
             </CardContent>
           </Card>
           
           <Card className="cyber-card text-center">
             <CardContent className="pt-6">
               <Zap className="w-8 h-8 mx-auto mb-2 text-neon-green" />
-              <div className="text-2xl font-rajdhani font-bold text-foreground">{currentXP}</div>
-              <div className="text-sm text-muted-foreground">Total XP</div>
+              <div className="text-2xl font-rajdhani font-bold text-white">{currentXP}</div>
+              <div className="text-sm text-gray-400">Total XP</div>
             </CardContent>
           </Card>
         </div>
