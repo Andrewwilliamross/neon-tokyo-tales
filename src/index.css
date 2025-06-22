@@ -4,11 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cyberpunk Tokyo Vaporwave Design System - Neon Light Mode */
+/* Cyberpunk Tokyo Vaporwave Design System - Grey Background Mode */
 
 @layer base {
   :root {
-    --background: 255 255 255;
+    --background: 128 128 128;
     --foreground: 42 42 42;
 
     --card: 245 245 245;
@@ -38,7 +38,7 @@
 
     --radius: 0.75rem;
 
-    --sidebar-background: 255 255 255;
+    --sidebar-background: 128 128 128;
     --sidebar-foreground: 42 42 42;
     --sidebar-primary: 255 16 240;
     --sidebar-primary-foreground: 255 255 255;
