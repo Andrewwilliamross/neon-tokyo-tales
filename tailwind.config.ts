@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,28 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Cyberpunk Vaporwave Color Palette
+				neon: {
+					pink: '#FF10F0',
+					blue: '#00D4FF',
+					purple: '#8A2BE2',
+					green: '#39FF14',
+					orange: '#FF6B35',
+				},
+				cyber: {
+					dark: '#0A0A0F',
+					'dark-lighter': '#1A1A2E',
+					'dark-blue': '#16213E',
+					'electric': '#00F5FF',
+					'matrix': '#00FF41',
+				},
+				vaporwave: {
+					purple: '#B967DB',
+					pink: '#FF71CE',
+					blue: '#01CDFE',
+					teal: '#05FFA1',
+					yellow: '#FFFB96',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +85,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				'rajdhani': ['Rajdhani', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +111,43 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'neon-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor'
+					},
+					'50%': {
+						boxShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor'
+					}
+				},
+				'tokyo-shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+				'tokyo-shimmer': 'tokyo-shimmer 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+			},
+			backgroundImage: {
+				'cyber-gradient': 'linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 50%, #16213E 100%)',
+				'neon-gradient': 'linear-gradient(135deg, #FF10F0 0%, #00D4FF 100%)',
+				'vaporwave-gradient': 'linear-gradient(135deg, #B967DB 0%, #FF71CE 50%, #01CDFE 100%)',
 			}
 		}
 	},
