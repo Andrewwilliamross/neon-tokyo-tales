@@ -111,19 +111,19 @@ const Index = () => {
         <div className="cyber-card">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-neon-gradient neon-glow flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-vaporwave-gradient neon-glow flex items-center justify-center">
                 <span className="text-2xl font-rajdhani font-bold text-white">CY</span>
               </div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-rajdhani font-bold neon-text-pink">
+                <h1 className="text-2xl md:text-3xl font-rajdhani font-bold text-neon-pink">
                   Cyber Yamazaki
                 </h1>
                 <p className="text-muted-foreground">Tokyo Digital Nomad</p>
                 <div className="flex items-center gap-2 mt-1">
-                  <Badge className="neon-badge-blue">
+                  <Badge className="bg-neon-blue/20 text-neon-blue border-neon-blue/30">
                     Level {userLevel}
                   </Badge>
-                  <Badge className="neon-badge-teal">
+                  <Badge className="bg-vaporwave-teal/20 text-vaporwave-teal border-vaporwave-teal/30">
                     <Calendar className="w-3 h-3 mr-1" />
                     {streak} day streak
                   </Badge>
@@ -132,7 +132,7 @@ const Index = () => {
             </div>
             
             <div className="flex flex-col items-end gap-2">
-              <div className="flex items-center gap-2 neon-text-blue">
+              <div className="flex items-center gap-2 text-neon-blue">
                 <Clock className="w-5 h-5" />
                 <span className="font-rajdhani text-xl">{currentTime}</span>
                 <span className="text-sm text-muted-foreground">JST</span>
@@ -152,7 +152,7 @@ const Index = () => {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="neon-button font-rajdhani text-lg px-8 py-6 h-auto animate-float"
+            className="bg-neon-gradient hover:opacity-90 text-white font-rajdhani text-lg px-8 py-6 h-auto neon-glow animate-float"
           >
             <Camera className="w-6 h-6 mr-2" />
             Create New Entry
@@ -163,9 +163,9 @@ const Index = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
           {/* Daily Mission */}
-          <Card className="mission-card border-0">
+          <Card className="mission-card">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 neon-text-teal">
+              <CardTitle className="flex items-center gap-2 text-vaporwave-teal">
                 <Target className="w-5 h-5" />
                 Daily Mission
               </CardTitle>
@@ -183,7 +183,7 @@ const Index = () => {
                     <Zap className="w-3 h-3 mr-1" />
                     +{dailyPrompt.xpReward} XP
                   </Badge>
-                  <Badge className="neon-badge-teal">
+                  <Badge variant="outline" className="border-vaporwave-teal/30 text-vaporwave-teal">
                     {dailyPrompt.difficulty}
                   </Badge>
                 </div>
@@ -192,16 +192,16 @@ const Index = () => {
           </Card>
 
           {/* Side Quests */}
-          <Card className="cyber-card border-0">
+          <Card className="cyber-card">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 neon-text-blue">
+              <CardTitle className="flex items-center gap-2 text-neon-blue">
                 <Star className="w-5 h-5" />
                 Side Quests
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {sideQuests.map((quest) => (
-                <div key={quest.id} className="p-3 rounded border border-neon-blue/30 hover:border-neon-blue/50 transition-colors bg-black/5 backdrop-blur-sm">
+                <div key={quest.id} className="p-3 rounded border border-border hover:border-neon-blue/30 transition-colors">
                   <div className="flex items-start justify-between mb-2">
                     <h4 className="font-medium text-foreground">{quest.title}</h4>
                     <Badge className="xp-badge text-xs">+{quest.xpReward}</Badge>
@@ -223,9 +223,9 @@ const Index = () => {
         </div>
 
         {/* Recent Entries */}
-        <Card className="cyber-card border-0">
+        <Card className="cyber-card">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 neon-text-pink">
+            <CardTitle className="flex items-center gap-2 text-neon-pink">
               <TrendingUp className="w-5 h-5" />
               Recent Entries
             </CardTitle>
@@ -233,7 +233,7 @@ const Index = () => {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {recentEntries.map((entry) => (
-                <div key={entry.id} className="entry-card">
+                <div key={entry.id} className="entry-card p-4">
                   <div className="aspect-video bg-cyber-dark-blue rounded mb-3 overflow-hidden tokyo-shimmer">
                     <img 
                       src={`https://images.unsplash.com/${entry.image}?w=400&h=300&fit=crop`}
@@ -249,7 +249,7 @@ const Index = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex flex-wrap gap-1">
                       {entry.tags.slice(0, 2).map((tag) => (
-                        <Badge key={tag} className="neon-badge-outline text-xs">
+                        <Badge key={tag} variant="outline" className="text-xs border-border text-muted-foreground">
                           {tag}
                         </Badge>
                       ))}
@@ -266,33 +266,33 @@ const Index = () => {
 
         {/* Stats Overview */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card className="stat-card border-0">
+          <Card className="cyber-card text-center">
             <CardContent className="pt-6">
-              <Award className="w-8 h-8 mx-auto mb-2 neon-text-pink" />
+              <Award className="w-8 h-8 mx-auto mb-2 text-neon-pink" />
               <div className="text-2xl font-rajdhani font-bold text-foreground">47</div>
               <div className="text-sm text-muted-foreground">Total Entries</div>
             </CardContent>
           </Card>
           
-          <Card className="stat-card border-0">
+          <Card className="cyber-card text-center">
             <CardContent className="pt-6">
-              <Camera className="w-8 h-8 mx-auto mb-2 neon-text-teal" />
+              <Camera className="w-8 h-8 mx-auto mb-2 text-vaporwave-teal" />
               <div className="text-2xl font-rajdhani font-bold text-foreground">203</div>
               <div className="text-sm text-muted-foreground">Photos</div>
             </CardContent>
           </Card>
           
-          <Card className="stat-card border-0">
+          <Card className="cyber-card text-center">
             <CardContent className="pt-6">
-              <MapPin className="w-8 h-8 mx-auto mb-2 neon-text-blue" />
+              <MapPin className="w-8 h-8 mx-auto mb-2 text-neon-blue" />
               <div className="text-2xl font-rajdhani font-bold text-foreground">23</div>
               <div className="text-sm text-muted-foreground">Locations</div>
             </CardContent>
           </Card>
           
-          <Card className="stat-card border-0">
+          <Card className="cyber-card text-center">
             <CardContent className="pt-6">
-              <Zap className="w-8 h-8 mx-auto mb-2 text-neon-green neon-glow-green" />
+              <Zap className="w-8 h-8 mx-auto mb-2 text-neon-green" />
               <div className="text-2xl font-rajdhani font-bold text-foreground">{currentXP}</div>
               <div className="text-sm text-muted-foreground">Total XP</div>
             </CardContent>
